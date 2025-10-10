@@ -17,44 +17,24 @@ const ServiceCard = ({ title, description, icon }: { title: string, description:
 export default function Services() {
   const services = [
     {
-      title: "Trustee Services",
-      description: "Trusts provide a flexible alternative to corporations particularly where an asset trading platform is required. By using SPH to hold assets in trust investors can Pledge them as security for finance or trade them intra platform by a simple re-assignment.",
-      icon: "🏛️"
+      title: "Real Estate Trust Solutions",
+      description: "Own, manage, and pass on real estate assets securely. Holding structures for commercial & residential properties, real estate within private trusts (offshore), succession planning for family-owned property portfolios, trust structuring for property developers and landlords, estate tax mitigation in real estate-rich jurisdictions.",
+      icon: "🏠"
     },
     {
-      title: "Sophisticated Financial Solutions",
-      description: "Various personalised structures can be enabled depending on your tax resident status and jurisdictional tax regulations that enable range tax mitigation and asset protection strategies.",
+      title: "Asia-Focused Trust & Fiduciary Services",
+      description: "Onshore and offshore structures tailored for Global families. Trust setup in Labuan, Private Trust Companies (PTCs) for family control, Purpose & family trusts for legacy and philanthropy, Trust restructuring for evolving regulations (e.g. CRS, FATCA).",
+      icon: "🌏"
+    },
+    {
+      title: "Wealth Structuring & Succession Planning",
+      description: "Long-term planning for generational wealth transfer. Multi-jurisdictional estate planning, Inheritance solutions for families with cross-border beneficiaries, Asset protection from political, legal, or market risks, Support for expatriates, global citizens, and international families.",
       icon: "💼"
     },
     {
-      title: "Development Companies",
-      description: "Offshore development companies located in Labuan can own rights to land through the SPH platform, apply for building permits and manage projects using local contractors, sale and management agents.",
-      icon: "🏗️"
-    },
-    {
-      title: "Seamless Asset Trading",
-      description: "The SPH trust platform allows seamless asset trading, tax free in Labuan. Thai assets can therefore be acquired, funded, and sold with tax due only on repatriation of funds to Thai tax resident owners.",
-      icon: "🔄"
-    },
-    {
-      title: "Corporate Structuring",
-      description: "SPH can establish and help manage development companies offshore in the Labuan low tax environment which also benefits from multiple double taxation treaties under the Malaysian flag.",
-      icon: "📊"
-    },
-    {
-      title: "Professional Management",
-      description: "As trustees we provide professional and prudent management of assets based on the trust deed mandate you establish. Properly constructed Labuan Trusts provide multiple opportunities for asset protection.",
-      icon: "👨‍💼"
-    },
-    {
-      title: "Asset Backed Guarantees",
-      description: "We create and manage guarantee from local corporations that own assets or act as custodians on our behalf.",
-      icon: "🔐"
-    },
-    {
-      title: "Democratisation of Solutions",
-      description: "Our solutions are extremely sophisticated yet simple to use, and we make them available on a cost effective basis by sharing costs across multiple members.",
-      icon: "👥"
+      title: "Corporate Structures for Real Estate Investment",
+      description: "Smart structures for efficient property ownership and transfer. Offshore-onshore companies/SPVs for property holding, Joint ventures & co-investment strategies, Corporate governance, compliance & reporting, Exit planning & capital gains optimisation.",
+      icon: "🧱"
     }
   ];
 
@@ -66,14 +46,14 @@ export default function Services() {
       />
       
       <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto mb-16">
-            <p className="text-lg mb-8">
-              At SPH, we offer a comprehensive range of services designed to provide foreign investors with secure access to Southeast Asian property markets. Our solutions combine legal expertise, local partnerships, and innovative financial structures to create a secure investment environment.
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
+              Clients benefit from a 'Better than Freehold™ ("BtF") wrapper' in terms of our project management for international real estate developers. We ensure operating structures and protections are as close as possible to executing a deal in their home jurisdiction no matter where clients are in the world.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
             {services.map((service, index) => (
               <ServiceCard 
                 key={index}
@@ -84,20 +64,60 @@ export default function Services() {
             ))}
           </div>
           
-          {/* Blockchain & Technology Section */}
-          <div className="bg-blue-50 p-8 rounded-lg mb-16">
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">Blockchain & Technology</h2>
-            <p className="text-lg mb-6">
-              SPH can also create blockchain enabled assets such as property backed NFT's and security Tokens (in association with Venture Management and Siam Venture Capital PCC).
+          {/* Jurisdictions Section */}
+          <div className="bg-gray-50 p-8 rounded-lg mb-16">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Jurisdictions We Specialize In</h2>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-bold text-gray-800 mb-4">Key Asian Markets & Holding Jurisdictions:</h3>
+                <div className="mb-4">
+                  <h4 className="font-semibold text-gray-700 mb-2">Thailand Real Estate Focus Areas:</h4>
+                  <p className="text-gray-600">Bangkok, Samui, Phuket, Krabi, Chon Buri, Chiang Mai</p>
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-bold text-gray-800 mb-4">Typical Trust Beneficiary Jurisdictions:</h3>
+                <p className="text-gray-600">
+                  Singapore, Hong Kong, Korea, Japan, UAE, UK, Australia, New Zealand, Europe, USA
+                </p>
+              </div>
+            </div>
+            
+            <p className="text-gray-600 mt-6 text-center">
+              We help you select the most efficient ownership and usage rights structure based on your tax residency, property investment strategy and succession goals.
             </p>
-            <p className="text-lg">
-              Our platform is designed to evolve into a blockchain enabled community, providing enhanced security, transparency, and trading capabilities for our members.
-            </p>
+          </div>
+          
+          {/* Who We Serve Section */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Who We Serve</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="font-semibold text-gray-800 mb-2">Real estate investors and developers</h3>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="font-semibold text-gray-800 mb-2">Family offices with multi-property portfolios</h3>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="font-semibold text-gray-800 mb-2">Asian business families with global assets</h3>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="font-semibold text-gray-800 mb-2">Foreign investors in Asian property markets</h3>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="font-semibold text-gray-800 mb-2">Expatriates with cross-border real estate holdings</h3>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="font-semibold text-gray-800 mb-2">Legal and tax advisors seeking trust structuring for clients</h3>
+              </div>
+            </div>
           </div>
           
           {/* Call to Action */}
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">Ready to secure your investments?</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">Ready to secure your investments?</h2>
             <Link 
               href="/contact" 
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300"

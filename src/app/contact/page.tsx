@@ -1,11 +1,75 @@
+'use client';
+
+import { useState } from 'react';
 import Hero from '@/components/Hero';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    investmentInterest: 'Property Investment'
+  });
+
+  const [status, setStatus] = useState({
+    loading: false,
+    success: false,
+    error: ''
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus({ loading: true, success: false, error: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Something went wrong');
+      }
+
+      setStatus({ loading: false, success: true, error: '' });
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        investmentInterest: 'Property Investment'
+      });
+
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setStatus(prev => ({ ...prev, success: false }));
+      }, 5000);
+
+    } catch (error) {
+      setStatus({
+        loading: false,
+        success: false,
+        error: error instanceof Error ? error.message : 'Failed to submit form'
+      });
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <div>
       <Hero 
         title="Contact Us" 
-        subtitle="Get in touch with our team to secure your investment future"
+        subtitle="Begin your journey toward secure, compliant, and financeable property ownership"
       />
       
       <section className="py-12 md:py-16 px-4 bg-white">
@@ -13,98 +77,90 @@ export default function Contact() {
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {/* Contact Form - First on mobile for better UX */}
             <div className="md:order-2">
-              <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4 md:mb-6">Apply for Membership</h2>
-              <form className="space-y-4 md:space-y-6">
-                <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-                  <div>
-                    <label htmlFor="first-name" className="block text-sm font-medium text-gray-700 mb-1">
-                      First Name
-                    </label>
-                    <input
-                      type="text"
-                      id="first-name"
-                      name="first-name"
-                      className="w-full px-3 md:px-4 py-2 text-sm md:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="last-name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      id="last-name"
-                      name="last-name"
-                      className="w-full px-3 md:px-4 py-2 text-sm md:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      required
-                    />
-                  </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4 md:mb-6">Register Your Interest</h2>
+              
+              {status.success && (
+                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+                  Thank you for your interest! We'll be in touch soon.
+                </div>
+              )}
+              
+              {status.error && (
+                <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+                  {status.error}
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                <div>
+                  <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    className="w-full px-3 md:px-4 py-2 text-sm md:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your full name"
+                    required
+                    disabled={status.loading}
+                  />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email
-                  </label>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full px-3 md:px-4 py-2 text-sm md:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your email address"
                     required
+                    disabled={status.loading}
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                    Phone
-                  </label>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number (Optional)</label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                     className="w-full px-3 md:px-4 py-2 text-sm md:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your phone number"
+                    disabled={status.loading}
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="interest" className="block text-sm font-medium text-gray-700 mb-1">
-                    I am interested in
-                  </label>
+                  <label htmlFor="investmentInterest" className="block text-sm font-medium text-gray-700 mb-1">Investment Interest</label>
                   <select
-                    id="interest"
-                    name="interest"
-                    className="w-full px-3 md:px-4 py-2 text-sm md:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="investmentInterest"
+                    name="investmentInterest"
+                    value={formData.investmentInterest}
+                    onChange={handleChange}
+                    className="w-full px-3 md:px-4 py-2 text-sm md:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                     required
+                    disabled={status.loading}
                   >
-                    <option value="">Select an option</option>
-                    <option value="property-investment">Property Investment</option>
-                    <option value="development">Property Development</option>
-                    <option value="finance">Finance Solutions</option>
-                    <option value="asset-backed-guarantees">Asset Backed Guarantees</option>
-                    <option value="other">Other</option>
+                    <option value="Property Investment">Property Investment</option>
+                    <option value="Development">Development</option>
+                    <option value="Joint Venture">Joint Venture</option>
+                    <option value="Other">Other</option>
                   </select>
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    className="w-full px-3 md:px-4 py-2 text-sm md:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required
-                  ></textarea>
                 </div>
                 
                 <div>
                   <button
                     type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 md:py-3 px-4 text-sm md:text-base rounded-md transition duration-300"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 md:py-3 px-4 text-sm md:text-base rounded-md transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={status.loading}
                   >
-                    Submit Application
+                    {status.loading ? 'Submitting...' : 'Register Interest'}
                   </button>
                 </div>
               </form>

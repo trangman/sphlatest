@@ -4,44 +4,80 @@ export default function About() {
   return (
     <div>
       <Hero 
-        title="About SPH" 
-        subtitle="Your Trusted Partner in Southeast Asian Property Investment"
+        title="About Us" 
+        subtitle="Who We Are"
       />
       
       <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-6xl">
           <div className="prose prose-lg max-w-none">
-            <p className="text-lg mb-8">
-              SPH was founded with the objective of empowering investors and providing access to a centralized securitization and trading platform that can evolve into a blockchain enabled community. With trading of beneficial interests offshore in Labuan, we can provide enhanced Investor Protection and Finance.
-            </p>
-
-            <p className="text-lg mb-8">
-              Asset Backed Guarantees are managed on behalf of SPH by local agents in each jurisdiction. In Thailand, we use Clear Blue (www.clearblue.th) who operate under the Thai Business Security Act managing share pledges and mortgages over assets SPH invest in which are owned by our local partners TIN.
-            </p>
-
-            <h2 className="text-3xl font-bold text-blue-900 mt-12 mb-6">Our Philosophy</h2>
-            <p className="mb-6">
-              At Siam Property Holdings, we believe that foreign investors should have access to the same level of security and legal protection as local investors. Our innovative platform brings together legal expertise, local partnerships, and financial innovation to create a secure investment environment.
-            </p>
-
-            <div className="bg-blue-50 p-6 rounded-lg my-8">
-              <h3 className="text-xl font-bold text-blue-900 mb-4">Our Core Values</h3>
-              <ul className="list-disc list-inside space-y-2">
-                <li><span className="font-semibold">Security</span> - We prioritize the protection of our investors' assets</li>
-                <li><span className="font-semibold">Transparency</span> - Clear communication and open processes</li>
-                <li><span className="font-semibold">Innovation</span> - Continuously improving our platform and services</li>
-                <li><span className="font-semibold">Expertise</span> - Professional management with deep local knowledge</li>
-                <li><span className="font-semibold">Integrity</span> - Ethical standards in all our dealings</li>
-              </ul>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">Who We Are</h2>
+              <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+                We are a boutique wealth management and fiduciary firm focused on the intersection of real estate investment and trust structuring across S.E. Asia. From Thailand and Singapore to the UK and beyond, we provide high-net-worth individuals, property developers, buyers & investors and family offices with tailored structures to invest, protect, grow, and transfer real estate wealth with confidence.
+              </p>
             </div>
 
-            <h2 className="text-3xl font-bold text-blue-900 mt-12 mb-6">Our Approach</h2>
-            <p className="mb-6">
-              We've developed a comprehensive system that addresses the unique challenges of foreign investment in Thai property. By combining legal expertise, local partnerships, and innovative financial structures, we provide our members with a level of security previously unavailable to individual investors.
-            </p>
-            <p>
-              Our "Trustee Platform" enables rights equivalent to freehold ownership while remaining compliant with local laws and regulations. This approach is supported by thorough legal documentation drafted by leading international lawyers and is recognized by financial institutions.
-            </p>
+            <div className="grid md:grid-cols-2 gap-12 mb-16">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Mission</h3>
+                <p className="text-gray-600">
+                  To simplify complex real estate and wealth holdings across borders through compliant, tax-efficient, and future-ready trust structures.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Edge in Asia & Real Estate</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-3">✓</span>
+                    <span className="text-gray-600">Deep understanding of S.E. Asian real estate markets</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-3">✓</span>
+                    <span className="text-gray-600">Expertise in cross-border structuring involving real estate in Thailand for Australian, Asian and European HNW's and single dwelling property investors</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-3">✓</span>
+                    <span className="text-gray-600">Local presence and regional team</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-600 mr-3">✓</span>
+                    <span className="text-gray-600">Proven experience managing real estate within trust structures</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">Global Reach</h3>
+              <p className="text-gray-600 mb-6">
+                With trust operations in Labuan, teams in Thailand and Singapore, and partnerships in the UK, Australia, and Asia, SPH bridges continents to deliver secure, compliant property ownership and wealth continuity.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-3">Key Asian Markets & Holding Jurisdictions:</h4>
+                  <div className="space-y-2">
+                    <div>
+                      <h5 className="font-medium text-gray-700">Thailand Real Estate Focus Areas:</h5>
+                      <p className="text-sm text-gray-600">Bangkok, Samui, Phuket, Krabi, Chon Buri, Chiang Mai</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-3">Typical Trust Beneficiary Jurisdictions:</h4>
+                  <p className="text-sm text-gray-600">
+                    Singapore, Hong Kong, Korea, Japan, UAE, UK, Australia, New Zealand, Europe, USA
+                  </p>
+                </div>
+              </div>
+              
+              <p className="text-gray-600 mt-6 text-sm">
+                We help you select the most efficient ownership and usage rights structure based on your tax residency, property investment strategy and succession goals.
+              </p>
+            </div>
           </div>
         </div>
       </section>

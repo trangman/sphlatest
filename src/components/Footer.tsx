@@ -35,8 +35,18 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-blue-800 mt-8 pt-4 text-center">
-          <p className="text-sm text-white">&copy; {new Date().getFullYear()} Siam Property Holdings. All rights reserved.</p>
+        <div className="border-t border-blue-800 mt-8 pt-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-sm text-white mb-4 md:mb-0">&copy; {new Date().getFullYear()} Siam Property Holdings. All rights reserved.</p>
+            <div className="flex space-x-6">
+              <Link href="/privacy-policy" className="text-sm text-white hover:text-blue-200 transition duration-200">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-conditions" className="text-sm text-white hover:text-blue-200 transition duration-200">
+                Terms & Conditions
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

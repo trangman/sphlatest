@@ -1,27 +1,16 @@
 import { NextResponse } from 'next/server';
-import SibApiV3Sdk from 'sib-api-v3-sdk';
 import nodemailer from 'nodemailer';
 import { format } from 'date-fns';
 import { toZonedTime } from 'date-fns-tz';
 
-if (!process.env.BREVO_API_KEY) {
-  throw new Error('BREVO_API_KEY is not defined');
-}
-
-// Initialize Brevo API client
-const defaultClient = SibApiV3Sdk.ApiClient.instance;
-const apiKey = defaultClient.authentications['api-key'];
-apiKey.apiKey = process.env.BREVO_API_KEY;
-const apiInstance = new SibApiV3Sdk.ContactsApi();
-
 // Configure SMTP transport
-const transporter = nodemailer.createTransport({
-  host: 'smtp-relay.brevo.com',
-  port: 587,
+const transporter = nodemailer.createTransporter({
+  host: process.env.SMTP_HOST || 'smtp.gmail.com',
+  port: parseInt(process.env.SMTP_PORT || '587'),
   secure: false,
   auth: {
-    user: process.env.BREVO_SMTP_LOGIN,
-    pass: process.env.BREVO_SMTP_PASSWORD,
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASSWORD,
   },
 });
 
@@ -30,25 +19,11 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { fullName, email, phone = '', investmentInterest } = body;
 
-    // Add contact to Brevo list
-    const createContact = {
-      email,
-      attributes: {
-        FIRSTNAME: fullName.split(' ')[0],
-        LASTNAME: fullName.split(' ').slice(1).join(' '),
-        PHONE: phone,
-        INTEREST: investmentInterest,
-      },
-      listIds: [11],
-    } as SibApiV3Sdk.CreateContact;
-
-    await apiInstance.createContact(createContact);
-
     // Get Thailand time
     const thailandTime = toZonedTime(new Date(), 'Asia/Bangkok');
     const formattedDate = format(thailandTime, 'MMMM dd, yyyy HH:mm:ss (O)');
 
-    if (!process.env.BREVO_FROM_EMAIL || !process.env.ADMIN_EMAIL) {
+    if (!process.env.SMTP_USER || !process.env.ADMIN_EMAIL) {
       throw new Error('Email configuration is missing');
     }
 
@@ -81,7 +56,7 @@ export async function POST(request: Request) {
     `;
 
     await transporter.sendMail({
-      from: process.env.BREVO_FROM_EMAIL,
+      from: process.env.SMTP_USER,
       to: process.env.ADMIN_EMAIL,
       subject: 'New Contact Form Submission - SPH',
       html: emailHtml,
@@ -99,4 +74,4 @@ export async function POST(request: Request) {
       { status: 500 }
     );
   }
-} 
+}

@@ -1,69 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    investmentInterest: 'Property Investment'
-  });
-
-  const [status, setStatus] = useState({
-    loading: false,
-    success: false,
-    error: ''
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus({ loading: true, success: false, error: '' });
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Something went wrong');
-      }
-
-      setStatus({ loading: false, success: true, error: '' });
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        investmentInterest: 'Property Investment'
-      });
-
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setStatus(prev => ({ ...prev, success: false }));
-      }, 5000);
-
-    } catch (error) {
-      setStatus({
-        loading: false,
-        success: false,
-        error: error instanceof Error ? error.message : 'Failed to submit form'
-      });
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
     <main className="min-h-screen flex flex-col">
       {/* Hero Section with Background Image */}
@@ -77,101 +16,158 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative container mx-auto max-w-4xl text-center z-10">
-          <h1 className="text-white text-5xl font-bold mb-8">SPH – Coming Soon</h1>
-          <p className="text-white text-xl leading-relaxed">
-            Our platform provides a Legal Solution for Foreign Investors in Thai property with Asset Backed Guarantees, professional stewardship and bespoke financing solutions for owners and developers.
+          <h1 className="text-white text-5xl font-bold mb-8">The Trusted Bridge Between Real Estate and Wealth Management</h1>
+          <p className="text-white text-xl leading-relaxed mb-8">
+            Licensed in Labuan and active across Asia, Siam Property Holding (SPH) provides regulated trust, fiduciary, and real estate holding structures — creating secure, compliant, and financeable ownership solutions for cross-border investors.
           </p>
+          <Link 
+            href="/services"
+            className="inline-block bg-blue-600 text-white font-medium py-3 px-8 rounded-md hover:bg-blue-700 transition duration-200"
+          >
+            Explore Our Solutions
+          </Link>
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="container mx-auto max-w-xl">
-          <div className="bg-white p-8 rounded-lg shadow-lg border-2 border-blue-600">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Register Your Interest</h2>
-            
-            {status.success && (
-              <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
-                Thank you for your interest! We'll be in touch soon.
-              </div>
-            )}
-            
-            {status.error && (
-              <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
-                {status.error}
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Enter your full name"
-                  required
-                  disabled={status.loading}
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Enter your email address"
-                  required
-                  disabled={status.loading}
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number (Optional)</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Enter your phone number"
-                  disabled={status.loading}
-                />
-              </div>
-              <div>
-                <label htmlFor="investmentInterest" className="block text-sm font-medium text-gray-700 mb-1">Investment Interest</label>
-                <select
-                  id="investmentInterest"
-                  name="investmentInterest"
-                  value={formData.investmentInterest}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
-                  required
-                  disabled={status.loading}
-                >
-                  <option value="Property Investment">Property Investment</option>
-                  <option value="Development">Development</option>
-                  <option value="Joint Venture">Joint Venture</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-              <div className="pt-4">
-                <button
-                  type="submit"
-                  className="w-full bg-blue-600 text-white font-medium py-2.5 rounded-md hover:bg-blue-700 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled={status.loading}
-                >
-                  {status.loading ? 'Submitting...' : 'Register Interest'}
-                </button>
-              </div>
-            </form>
+      {/* What We Do Section */}
+      <section className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">What We Do</h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
+              SPH enables investors, developers, and family offices to own, manage, and transfer real estate wealth securely — using trust-based structures that comply with Thai law and AMLA 2025, whilst delivering the same or better rights than freehold ownership.
+            </p>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
+              Through partnerships with Thailand Investor Network (TIN) and Clear Blue Security Agents (CBSA), every client enjoys enforceable property rights, independent oversight, and seamless cross-border finance ability.
+            </p>
+            <Link 
+              href="/about"
+              className="inline-block bg-blue-600 text-white font-medium py-3 px-8 rounded-md hover:bg-blue-700 transition duration-200"
+            >
+              Learn How It Works
+            </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Core Solutions Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold text-gray-800 text-center mb-16">Core Solutions</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">Real Estate Trusts</h3>
+              <p className="text-gray-600">
+                Holding, succession, and protection structures for high-value property portfolios across Thailand, Singapore, and beyond.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">Asia-Focused Fiduciary Services</h3>
+              <p className="text-gray-600">
+                Onshore and offshore trusts, PTCs, and family governance solutions.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">Corporate & Developer Structures</h3>
+              <p className="text-gray-600">
+                Financeable, compliant vehicles that accelerate project execution.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why SPH Section */}
+      <section className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">Why SPH</h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
+              SPH sits at the intersection of real estate, trust law, and cross-border wealth management — offering a unique blend of compliance, control, and continuity.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Edge</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-3">✓</span>
+                  <span className="text-gray-600">Regulated trust company (Labuan FSA)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-3">✓</span>
+                  <span className="text-gray-600">Regional expertise in Thai and offshore real estate</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-3">✓</span>
+                  <span className="text-gray-600">Integrated with Better-than-Freehold™ platform</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-3">✓</span>
+                  <span className="text-gray-600">Independent CBSA enforcement</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-600 mr-3">✓</span>
+                  <span className="text-gray-600">Transparent and AMLA-compliant</span>
+                </li>
+              </ul>
+              <div className="mt-8">
+                <Link 
+                  href="/about"
+                  className="inline-block bg-blue-600 text-white font-medium py-3 px-8 rounded-md hover:bg-blue-700 transition duration-200"
+                >
+                  Discover Our Advantage
+                </Link>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">Who We Serve</h3>
+              <div className="space-y-4">
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-gray-800">Investors & Buyers</h4>
+                  <p className="text-gray-600 text-sm">Secure ownership with full control and inheritance rights.</p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-gray-800">Developers</h4>
+                  <p className="text-gray-600 text-sm">Increase sales velocity and finance ability.</p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-gray-800">Family Offices</h4>
+                  <p className="text-gray-600 text-sm">Simplify cross-border asset consolidation.</p>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-gray-800">Advisors & Lawyers</h4>
+                  <p className="text-gray-600 text-sm">Access compliant trust structuring tools.</p>
+                </div>
+              </div>
+              <div className="mt-8">
+                <Link 
+                  href="/services"
+                  className="inline-block bg-blue-600 text-white font-medium py-3 px-8 rounded-md hover:bg-blue-700 transition duration-200"
+                >
+                  Explore Your Path
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Global Reach Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="container mx-auto max-w-6xl text-center">
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">Global Reach</h2>
+          <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
+            With trust operations in Labuan, teams in Thailand and Singapore, and partnerships in the UK, Australia, and Asia, SPH bridges continents to deliver secure, compliant property ownership and wealth continuity.
+          </p>
+          <Link 
+            href="/contact"
+            className="inline-block bg-blue-600 text-white font-medium py-3 px-8 rounded-md hover:bg-blue-700 transition duration-200"
+          >
+            Book a Consultation
+          </Link>
         </div>
       </section>
     </main>

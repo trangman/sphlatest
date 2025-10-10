@@ -24,51 +24,45 @@ const ResourceCard = ({ title, description, link, icon }: { title: string; descr
 };
 
 export default function Resources() {
-  // Sample resource items
+  // Resource items from DOCX content
   const resources = [
     {
-      title: "Guide to Thai Property Laws",
-      description: "Understand the legal framework governing foreign investment in Thai property and how SPH navigates these regulations.",
+      title: "How to Hold Thai Real Estate as a Foreigner Legally",
+      description: "Learn about the legal frameworks and structures available for foreign investors in Thai real estate markets.",
+      link: "#",
+      icon: "🏠"
+    },
+    {
+      title: "Singapore Real Estate: Structuring Through Trusts",
+      description: "Explore how trust structures can be used effectively for Singapore real estate investments.",
+      link: "#",
+      icon: "🏢"
+    },
+    {
+      title: "Asset Protection Strategies for Asian Developers",
+      description: "Comprehensive guide to protecting assets and managing risks for property developers in Asian markets.",
+      link: "#",
+      icon: "🛡️"
+    },
+    {
+      title: "CRS & Offshore Property Holdings: What Families Need to Know",
+      description: "Understanding Common Reporting Standard implications for families with offshore property holdings.",
       link: "#",
       icon: "📋"
     },
     {
-      title: "Asset-Backed Guarantees Explained",
-      description: "Learn how our asset-backed guarantee system works to protect your investments and provide security.",
-      link: "#",
-      icon: "🔐"
-    },
-    {
-      title: "Benefits Comparison Guide",
-      description: "Compare different investment approaches in Thailand and see how the SPH solution stacks up against alternatives.",
-      link: "#",
-      icon: "📊"
-    },
-    {
-      title: "Investment Process Overview",
-      description: "Step-by-step guide to investing through SPH, from initial contact to securing your investment.",
-      link: "#",
-      icon: "🔄"
-    },
-    {
-      title: "Tax Planning for Property Investors",
-      description: "Understand the tax implications of investing in Thai property and strategies for optimization.",
+      title: "Japan Inheritance Tax: Planning for Property Owners",
+      description: "Strategic planning approaches for Japanese inheritance tax considerations in property ownership.",
       link: "#",
       icon: "💰"
-    },
-    {
-      title: "Blockchain in Property Investment",
-      description: "Discover how SPH is leveraging blockchain technology to enhance security and tradability.",
-      link: "#",
-      icon: "🔗"
     }
   ];
 
   return (
     <div>
       <Hero 
-        title="Resources" 
-        subtitle="Educational materials and guides to help you understand our services"
+        title="Insights & Articles" 
+        subtitle="Real Estate & Trust Planning"
       />
       
       <section className="py-16 px-4 bg-white">

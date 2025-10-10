@@ -23,82 +23,34 @@ const FaqItem = ({ question, answer }: { question: string; answer: React.ReactNo
 export default function FAQ() {
   const faqs = [
     {
-      question: "Are SPH regulated?",
+      question: "Can I hold income-generating real estate in a trust?",
       answer: (
         <p>
-          Yes, we are authorized and regulated by the Labuan Financial Services Authority "LFSA" (<a href="https://www.labuanfsa.gov.my" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">www.labuanfsa.gov.my</a>).
+          Yes. Trusts are often used to hold rental properties, commercial buildings, or even large development projects, offering advantages in asset protection, income distribution, and succession planning.
         </p>
       ),
     },
     {
-      question: "Are my contracts and documents safe? How are they held?",
+      question: "Is real estate held in trust protected from creditors?",
       answer: (
         <p>
-          Yes. In Labuan, we keep a copy of all records. Land title papers and other legal documents are held by our Security Agents in safe custody in Thailand.
+          When structured correctly, real estate in a trust can be shielded from personal or business liabilities. However, timing and jurisdictional rules are critical.
         </p>
       ),
     },
     {
-      question: "How does SPH provide security for foreign investors?",
+      question: "Can I use an offshore trust to hold real estate in Asia?",
       answer: (
         <p>
-          SPH offers a legal route for its members to achieve security over investments by working with our exclusive local partner who own and manage land assets in which we invest. Our investment rights are secured by asset backed guarantees from our partner TIN in our favor and passed onto our members.
+          Absolutely, provided the structure complies with local regulations and reporting obligations. For example, SPH has an exclusive commercial partnership with Thailand Investor Network ("TIN") that utilises the Better Than freehold™ ("BtF) Thai property acquisition platform to provide security and finance to foreign investors.
         </p>
       ),
     },
     {
-      question: "What is an 'Asset Backed Performance Guarantee'?",
+      question: "What is the Better than Freehold™ solution?",
       answer: (
         <p>
-          An Asset Backed Performance Guarantee is a legal mechanism that secures our investments in Thai property. These guarantees are managed on behalf of SPH by local agents in Thailand who operate under the Thai Business Security Act, managing share pledges and mortgages over assets SPH invest in.
-        </p>
-      ),
-    },
-    {
-      question: "Can foreigners own land in Thailand?",
-      answer: (
-        <p>
-          In Thailand and other local jurisdictions, it is generally illegal for foreign investors to own or control land assets. This is where SPH provides value - we create a legal structure that provides equivalent rights to freehold ownership while remaining compliant with local laws.
-        </p>
-      ),
-    },
-    {
-      question: "How does the SPH solution compare to a 30-year lease?",
-      answer: (
-        <p>
-          The SPH solution provides numerous advantages over a traditional 30-year lease, including secure tenure for life, rights to capital gains, finance options, guaranteed succession rights, tax optimization, and protection from both Thai and personal insolvency. Our benefits comparison table shows a detailed comparison.
-        </p>
-      ),
-    },
-    {
-      question: "Can I use SPH services for financing property development?",
-      answer: (
-        <p>
-          Yes. Our platform enables developers and investors to secure finance or refinance for property projects. Offshore development companies located in Labuan can own rights to land through the SPH platform, apply for building permits, and manage projects using local contractors.
-        </p>
-      ),
-    },
-    {
-      question: "How does SPH protect investors from fraud?",
-      answer: (
-        <p>
-          Our solution is supported by comprehensive legal opinions and contract sets drafted by leading international lawyers. We provide transparent and professional stewardship of investments, secured with "Asset Backed Guarantees" ensuring contractual performance and protection from fraud.
-        </p>
-      ),
-    },
-    {
-      question: "What is the cost of SPH services?",
-      answer: (
-        <p>
-          We make sophisticated solutions available on a cost-effective and accessible basis by sharing the costs across multiple members. This enables us to provide a million-dollar solution for a few hundred dollars in membership fees. Contact us for specific pricing details for your situation.
-        </p>
-      ),
-    },
-    {
-      question: "Who are your partners in Thailand?",
-      answer: (
-        <p>
-          In Thailand, we work exclusively with Thailand Investor Network (TIN) who provide us and our investors with an "Asset Backed Performance Guarantee." Asset Backed Guarantees are managed by Clear Blue (www.clearblue.th) who operate under the Thai Business Security Act.
+          Better-than-Freehold™ (BtF) is a legally compliant, financeable, and risk-mitigated platform designed for foreign investment in Thai real estate. It eliminates the legal risks associated with freehold ownership, 30-year lease limitations, and illegal nominee companies. BtF also enables offshore financing, provides capital protection, and ensures secure, enforceable ownership rights.
         </p>
       ),
     }
