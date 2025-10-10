@@ -194,7 +194,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-base md:text-lg font-semibold text-blue-900">Phone</h3>
-                    <p className="mt-1 text-sm md:text-base">+60 (0) 2xxx xxxx</p>
+                    <p className="mt-1 text-sm md:text-base">+60 (0) 15 4600 0087</p>
                   </div>
                 </div>
                 
