@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply text-gray-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-blue-900;
+  }
+
+  p {
+    @apply text-gray-700;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4;
+  }
+
+  .btn {
+    @apply inline-block px-6 py-3 rounded-lg font-semibold transition duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+  }
+
+  .btn-white {
+    @apply bg-white text-blue-900 hover:bg-blue-50;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-lg p-6 border border-gray-100;
+  }
+
+  .section {
+    @apply py-16;
+  }
+}
+
+/* Ensure text is always readable */
+.text-gray-700 {
+  color: #374151 !important;
+}
+
+.text-gray-600 {
+  color: #4B5563 !important;
+}
+
+/* Increase base font weight for better readability */
+p {
+  font-weight: 400;
+}
+
+/* Ensure headings are always bold enough */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+/* Ensure links are clearly visible */
+a {
+  color: #2563EB;
+  font-weight: 500;
+}
+
+/* Ensure text contrast in dark sections */
+.bg-blue-900 {
+  color: #FFFFFF;
+}
+
+.bg-blue-900 p {
+  color: #F3F4F6;
+  font-weight: 400;
+}
+
+/* Ensure form labels are visible */
+label {
+  color: #374151;
+  font-weight: 500;
+}
