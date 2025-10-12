@@ -18,8 +18,8 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12 mb-16">
-              <div>
+            <div className="mb-16 max-w-4xl">
+              <div className="mb-12">
                 <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Mission</h3>
                 <p className="text-gray-600">
                   To simplify complex real estate and wealth holdings across borders through compliant, tax-efficient, and future-ready trust structures.
@@ -49,35 +49,6 @@ export default function About() {
               </div>
             </div>
 
-            <div className="bg-gray-50 p-8 rounded-lg">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Global Reach</h3>
-              <p className="text-gray-600 mb-6">
-                With trust operations in Labuan, teams in Thailand and Singapore, and partnerships in the UK, Australia, and Asia, SPH bridges continents to deliver secure, compliant property ownership and wealth continuity.
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-3">Key Asian Markets & Holding Jurisdictions:</h4>
-                  <div className="space-y-2">
-                    <div>
-                      <h5 className="font-medium text-gray-700">Thailand Real Estate Focus Areas:</h5>
-                      <p className="text-sm text-gray-600">Bangkok, Samui, Phuket, Krabi, Chon Buri, Chiang Mai</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-3">Typical Trust Beneficiary Jurisdictions:</h4>
-                  <p className="text-sm text-gray-600">
-                    Singapore, Hong Kong, Korea, Japan, UAE, UK, Australia, New Zealand, Europe, USA
-                  </p>
-                </div>
-              </div>
-              
-              <p className="text-gray-600 mt-6 text-sm">
-                We help you select the most efficient ownership and usage rights structure based on your tax residency, property investment strategy and succession goals.
-              </p>
-            </div>
           </div>
         </div>
       </section>
