@@ -7,6 +7,7 @@ interface HeroProps {
   ctaText?: string;
   ctaLink?: string;
   backgroundImage?: string;
+  variant?: 'home' | 'inner';
 }
 
 const Hero = ({
@@ -15,13 +16,20 @@ const Hero = ({
   showCta = false,
   ctaText = "Apply for Membership",
   ctaLink = "/contact",
-  backgroundImage = "/images/hero-bg.webp",
+  backgroundImage,
+  variant = 'home',
 }: HeroProps) => {
+  // Set default background image based on variant
+  const defaultBackgroundImage = variant === 'inner' ? '/images/hero-bg-inner.webp' : '/images/hero-bg.webp';
+  const finalBackgroundImage = backgroundImage || defaultBackgroundImage;
+  
+  // Set height based on variant
+  const heightClass = variant === 'inner' ? 'min-h-[300px] md:min-h-[400px]' : 'min-h-[600px] md:min-h-[700px]';
   return (
     <div 
-      className="relative min-h-[600px] md:min-h-[700px] flex items-center"
+      className={`relative ${heightClass} flex items-center`}
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(${finalBackgroundImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'

@@ -6,6 +6,7 @@ export default function PrivacyPolicy() {
       <Hero 
         title="Privacy Policy" 
         subtitle="Your privacy is important to us"
+        variant="inner"
       />
       
       <section className="py-12 md:py-16 px-4 bg-white">

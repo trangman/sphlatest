@@ -6,6 +6,7 @@ export default function TermsConditions() {
       <Hero 
         title="Terms and Conditions" 
         subtitle="Please read our terms carefully"
+        variant="inner"
       />
       
       <section className="py-12 md:py-16 px-4 bg-white">

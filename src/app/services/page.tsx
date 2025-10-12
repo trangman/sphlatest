@@ -43,6 +43,7 @@ export default function Services() {
       <Hero 
         title="Our Services" 
         subtitle="Professional solutions for secure property investment in Southeast Asia"
+        variant="inner"
       />
       
       <section className="py-16 px-4 bg-white">

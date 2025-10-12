@@ -63,6 +63,7 @@ export default function Resources() {
       <Hero 
         title="Insights & Articles" 
         subtitle="Real Estate & Trust Planning"
+        variant="inner"
       />
       
       <section className="py-16 px-4 bg-white">

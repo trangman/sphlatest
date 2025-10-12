@@ -61,6 +61,7 @@ export default function FAQ() {
       <Hero 
         title="Frequently Asked Questions" 
         subtitle="Find answers to common questions about SPH and our services"
+        variant="inner"
       />
       
       <section className="py-12 md:py-16 px-4 bg-white">

@@ -5,7 +5,7 @@ export default function About() {
     <div>
       <Hero 
         title="About Us" 
-        subtitle="Who We Are"
+        variant="inner"
       />
       
       <section className="py-16 px-4 bg-white">

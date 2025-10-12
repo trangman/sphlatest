@@ -70,6 +70,7 @@ export default function Contact() {
       <Hero 
         title="Contact Us" 
         subtitle="Begin your journey toward secure, compliant, and financeable property ownership"
+        variant="inner"
       />
       
       <section className="py-12 md:py-16 px-4 bg-white">
