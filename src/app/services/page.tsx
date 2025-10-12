@@ -1,16 +1,33 @@
 import Hero from '@/components/Hero';
 import Link from 'next/link';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 // Service card component
-const ServiceCard = ({ title, description, icon }: { title: string, description: string, icon: string }) => {
+const ServiceCard = ({ title, subtitle, bullets, icon }: { title: string, subtitle: string, bullets: string[], icon: string }) => {
   return (
-    <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-      <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 text-blue-800">
-        <span className="text-3xl">{icon}</span>
-      </div>
-      <h3 className="text-xl font-bold text-blue-900 mb-3">{title}</h3>
-      <p className="text-gray-700">{description}</p>
-    </div>
+    <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+      <CardHeader>
+        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 text-blue-800">
+          <span className="text-3xl">{icon}</span>
+        </div>
+        <CardTitle className="text-xl font-bold text-blue-900">{title}</CardTitle>
+        <CardDescription className="text-gray-600 font-medium">
+          {subtitle}
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <ul className="space-y-2">
+          {bullets.map((bullet, index) => (
+            <li key={index} className="flex items-start">
+              <span className="text-blue-600 mr-3 mt-1">•</span>
+              <span className="text-gray-700">{bullet}</span>
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+    </Card>
   )
 };
 
@@ -18,22 +35,47 @@ export default function Services() {
   const services = [
     {
       title: "Real Estate Trust Solutions",
-      description: "Own, manage, and pass on real estate assets securely. Holding structures for commercial & residential properties, real estate within private trusts (offshore), succession planning for family-owned property portfolios, trust structuring for property developers and landlords, estate tax mitigation in real estate-rich jurisdictions.",
+      subtitle: "Own, manage, and pass on real estate assets securely.",
+      bullets: [
+        "Holding structures for commercial & residential properties",
+        "Real estate within private trusts (offshore)",
+        "Succession planning for family-owned property portfolios",
+        "Trust structuring for property developers and landlords",
+        "Estate tax mitigation in real estate-rich jurisdictions"
+      ],
       icon: "🏠"
     },
     {
       title: "Asia-Focused Trust & Fiduciary Services",
-      description: "Onshore and offshore structures tailored for Global families. Trust setup in Labuan, Private Trust Companies (PTCs) for family control, Purpose & family trusts for legacy and philanthropy, Trust restructuring for evolving regulations (e.g. CRS, FATCA).",
+      subtitle: "Onshore and offshore structures tailored for Global families.",
+      bullets: [
+        "Trust setup in Labuan",
+        "Private Trust Companies (PTCs) for family control",
+        "Purpose & family trusts for legacy and philanthropy",
+        "Trust restructuring for evolving regulations (e.g. CRS, FATCA)"
+      ],
       icon: "🌏"
     },
     {
       title: "Wealth Structuring & Succession Planning",
-      description: "Long-term planning for generational wealth transfer. Multi-jurisdictional estate planning, Inheritance solutions for families with cross-border beneficiaries, Asset protection from political, legal, or market risks, Support for expatriates, global citizens, and international families.",
+      subtitle: "Long-term planning for generational wealth transfer.",
+      bullets: [
+        "Multi-jurisdictional estate planning",
+        "Inheritance solutions for families with cross-border beneficiaries",
+        "Asset protection from political, legal, or market risks",
+        "Support for expatriates, global citizens, and international families"
+      ],
       icon: "💼"
     },
     {
       title: "Corporate Structures for Real Estate Investment",
-      description: "Smart structures for efficient property ownership and transfer. Offshore-onshore companies/SPVs for property holding, Joint ventures & co-investment strategies, Corporate governance, compliance & reporting, Exit planning & capital gains optimisation.",
+      subtitle: "Smart structures for efficient property ownership and transfer.",
+      bullets: [
+        "Offshore-onshore companies/SPVs for property holding",
+        "Joint ventures & co-investment strategies",
+        "Corporate governance, compliance & reporting",
+        "Exit planning & capital gains optimisation"
+      ],
       icon: "🧱"
     }
   ];
@@ -59,72 +101,81 @@ export default function Services() {
               <ServiceCard 
                 key={index}
                 title={service.title}
-                description={service.description}
+                subtitle={service.subtitle}
+                bullets={service.bullets}
                 icon={service.icon}
               />
             ))}
           </div>
           
           {/* Jurisdictions Section */}
-          <div className="bg-gray-50 p-8 rounded-lg mb-16">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Jurisdictions We Specialize In</h2>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">Key Asian Markets & Holding Jurisdictions:</h3>
-                <div className="mb-4">
-                  <h4 className="font-semibold text-gray-700 mb-2">Thailand Real Estate Focus Areas:</h4>
-                  <p className="text-gray-600">Bangkok, Samui, Phuket, Krabi, Chon Buri, Chiang Mai</p>
+          <Card className="mb-16">
+            <CardHeader className="text-center">
+              <CardTitle className="text-3xl font-bold text-gray-800 mb-6">Jurisdictions We Specialize In</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">Key Asian Markets & Holding Jurisdictions:</h3>
+                  <div className="mb-4">
+                    <h4 className="font-semibold text-gray-700 mb-2">Thailand Real Estate Focus Areas:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {['Bangkok', 'Samui', 'Phuket', 'Krabi', 'Chon Buri', 'Chiang Mai'].map((city) => (
+                        <Badge key={city} variant="secondary" className="text-sm">
+                          {city}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">Typical Trust Beneficiary Jurisdictions:</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {['Singapore', 'Hong Kong', 'Korea', 'Japan', 'UAE', 'UK', 'Australia', 'New Zealand', 'Europe', 'USA'].map((country) => (
+                      <Badge key={country} variant="outline" className="text-sm">
+                        {country}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </div>
               
-              <div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">Typical Trust Beneficiary Jurisdictions:</h3>
-                <p className="text-gray-600">
-                  Singapore, Hong Kong, Korea, Japan, UAE, UK, Australia, New Zealand, Europe, USA
-                </p>
-              </div>
-            </div>
-            
-            <p className="text-gray-600 mt-6 text-center">
-              We help you select the most efficient ownership and usage rights structure based on your tax residency, property investment strategy and succession goals.
-            </p>
-          </div>
+              <p className="text-gray-600 mt-6 text-center">
+                We help you select the most efficient ownership and usage rights structure based on your tax residency, property investment strategy and succession goals.
+              </p>
+            </CardContent>
+          </Card>
           
           {/* Who We Serve Section */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Who We Serve</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="font-semibold text-gray-800 mb-2">Real estate investors and developers</h3>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="font-semibold text-gray-800 mb-2">Family offices with multi-property portfolios</h3>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="font-semibold text-gray-800 mb-2">Asian business families with global assets</h3>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="font-semibold text-gray-800 mb-2">Foreign investors in Asian property markets</h3>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="font-semibold text-gray-800 mb-2">Expatriates with cross-border real estate holdings</h3>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="font-semibold text-gray-800 mb-2">Legal and tax advisors seeking trust structuring for clients</h3>
-              </div>
+              {[
+                "Real estate investors and developers",
+                "Family offices with multi-property portfolios", 
+                "Asian business families with global assets",
+                "Foreign investors in Asian property markets",
+                "Expatriates with cross-border real estate holdings",
+                "Legal and tax advisors seeking trust structuring for clients"
+              ].map((client, index) => (
+                <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <CardContent className="p-6">
+                    <h3 className="font-semibold text-gray-800">{client}</h3>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
           
           {/* Call to Action */}
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-800 mb-6">Ready to secure your investments?</h2>
-            <Link 
-              href="/contact" 
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300"
-            >
-              Get Started Today
-            </Link>
+            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8">
+              <Link href="/contact">
+                Get Started Today
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
