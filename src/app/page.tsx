@@ -88,9 +88,9 @@ export default function Home() {
           </div>
           
           <div className="grid md:grid-cols-2 gap-12">
-            <div>
+            <div className="flex flex-col">
               <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Edge</h3>
-              <ul className="space-y-4">
+              <ul className="space-y-4 flex-grow">
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3">✓</span>
                   <span className="text-gray-600">Regulated trust company (Labuan FSA)</span>
@@ -122,9 +122,9 @@ export default function Home() {
               </div>
             </div>
             
-            <div>
+            <div className="flex flex-col">
               <h3 className="text-2xl font-bold text-gray-800 mb-6">Who We Serve</h3>
-              <div className="space-y-4">
+              <div className="space-y-4 flex-grow">
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h4 className="font-semibold text-gray-800">Investors & Buyers</h4>
                   <p className="text-gray-600 text-sm">Secure ownership with full control and inheritance rights.</p>
@@ -132,10 +132,6 @@ export default function Home() {
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h4 className="font-semibold text-gray-800">Developers</h4>
                   <p className="text-gray-600 text-sm">Increase sales velocity and finance ability.</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-800">Family Offices</h4>
-                  <p className="text-gray-600 text-sm">Simplify cross-border asset consolidation.</p>
                 </div>
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h4 className="font-semibold text-gray-800">Advisors & Lawyers</h4>
