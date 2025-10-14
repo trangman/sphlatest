@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
   return (
@@ -87,66 +89,74 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="flex flex-col">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Edge</h3>
-              <ul className="space-y-4 flex-grow">
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-3">✓</span>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Our Edge Card */}
+            <Card className="h-full flex flex-col">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl font-bold text-gray-800">Our Edge</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 flex-grow">
+                <div className="flex items-start space-x-3">
+                  <span className="text-blue-600 text-lg font-bold mt-0.5 flex-shrink-0">✓</span>
                   <span className="text-gray-600">Regulated trust company (Labuan FSA)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-3">✓</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-blue-600 text-lg font-bold mt-0.5 flex-shrink-0">✓</span>
                   <span className="text-gray-600">Regional expertise in Thai and offshore real estate</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-3">✓</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-blue-600 text-lg font-bold mt-0.5 flex-shrink-0">✓</span>
                   <span className="text-gray-600">Integrated with Better-than-Freehold™ platform</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-3">✓</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-blue-600 text-lg font-bold mt-0.5 flex-shrink-0">✓</span>
                   <span className="text-gray-600">Independent CBSA enforcement</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-600 mr-3">✓</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-blue-600 text-lg font-bold mt-0.5 flex-shrink-0">✓</span>
                   <span className="text-gray-600">Transparent and AMLA-compliant</span>
-                </li>
-              </ul>
-              <div className="mt-8">
-                <Link 
-                  href="/about"
-                  className="inline-block bg-blue-600 text-white font-medium py-3 px-8 rounded-md hover:bg-blue-700 transition duration-200"
-                >
-                  Discover Our Advantage
-                </Link>
+                </div>
+              </CardContent>
+              <div className="p-6 pt-0">
+                <Button asChild className="w-full">
+                  <Link href="/about">Discover Our Advantage</Link>
+                </Button>
               </div>
-            </div>
+            </Card>
             
-            <div className="flex flex-col">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Who We Serve</h3>
-              <div className="space-y-4 flex-grow">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-800">Investors & Buyers</h4>
-                  <p className="text-gray-600 text-sm">Secure ownership with full control and inheritance rights.</p>
+            {/* Who We Serve Card */}
+            <Card className="h-full flex flex-col">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl font-bold text-gray-800">Who We Serve</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 flex-grow">
+                <div className="flex items-start space-x-3">
+                  <span className="text-blue-600 text-lg font-bold mt-0.5 flex-shrink-0">✓</span>
+                  <span className="text-gray-600">High-net-worth individuals seeking Thai real estate</span>
                 </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-800">Developers</h4>
-                  <p className="text-gray-600 text-sm">Increase sales velocity and finance ability.</p>
+                <div className="flex items-start space-x-3">
+                  <span className="text-blue-600 text-lg font-bold mt-0.5 flex-shrink-0">✓</span>
+                  <span className="text-gray-600">Families requiring succession planning</span>
                 </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-800">Advisors & Lawyers</h4>
-                  <p className="text-gray-600 text-sm">Access compliant trust structuring tools.</p>
+                <div className="flex items-start space-x-3">
+                  <span className="text-blue-600 text-lg font-bold mt-0.5 flex-shrink-0">✓</span>
+                  <span className="text-gray-600">Investors needing compliant offshore structures</span>
                 </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-blue-600 text-lg font-bold mt-0.5 flex-shrink-0">✓</span>
+                  <span className="text-gray-600">Clients requiring Better-than-Freehold™ solutions</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-blue-600 text-lg font-bold mt-0.5 flex-shrink-0">✓</span>
+                  <span className="text-gray-600">Those seeking transparent CBSA compliance</span>
+                </div>
+              </CardContent>
+              <div className="p-6 pt-0">
+                <Button asChild className="w-full">
+                  <Link href="/services">Explore Your Path</Link>
+                </Button>
               </div>
-              <div className="mt-8">
-                <Link 
-                  href="/services"
-                  className="inline-block bg-blue-600 text-white font-medium py-3 px-8 rounded-md hover:bg-blue-700 transition duration-200"
-                >
-                  Explore Your Path
-                </Link>
-              </div>
-            </div>
+            </Card>
           </div>
         </div>
       </section>

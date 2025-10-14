@@ -37,7 +37,7 @@ export default function RootLayout({
           <main className="flex-grow relative">
             {/* Watermark - only in content area */}
             <div 
-              className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-20 pointer-events-none z-50 hidden md:block"
+              className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10 pointer-events-none z-50 hidden md:block"
               style={{
                 backgroundImage: 'url(/images/watermark.png)',
                 backgroundRepeat: 'no-repeat',

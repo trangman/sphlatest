@@ -186,7 +186,7 @@ body::before {
 
 @media (min-width: 768px) {
   body::before {
-    opacity: 0.5;
+    opacity: 0.1;
     display: block;
   }
 }
