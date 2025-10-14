@@ -27,7 +27,7 @@ const Hero = ({
   const heightClass = variant === 'inner' ? 'min-h-[300px] md:min-h-[400px]' : 'min-h-[600px] md:min-h-[700px]';
   return (
     <div 
-      className={`relative ${heightClass} flex items-center`}
+      className={`relative ${heightClass} flex items-center z-10`}
       style={{
         backgroundImage: `url(${finalBackgroundImage})`,
         backgroundSize: 'cover',

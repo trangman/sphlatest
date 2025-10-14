@@ -66,6 +66,7 @@
   body {
     @apply bg-background text-foreground;
   }
+  
 }
 
 body {
@@ -94,6 +95,12 @@ body {
 @layer components {
   .container {
     @apply mx-auto px-4;
+  }
+  
+  /* Ensure content sections appear above watermark */
+  section {
+    position: relative;
+    z-index: 5;
   }
 
   .btn {
