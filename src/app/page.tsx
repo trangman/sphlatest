@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col">
-      {/* Hero Section with Background Image */}
+    <div className="min-h-screen flex flex-col">
+      {/* Hero Section */}
       <section 
         className="relative py-48 px-4 bg-cover bg-center"
         style={{
@@ -30,18 +30,8 @@ export default function Home() {
       </section>
 
       {/* What We Do Section */}
-      <section className="py-20 px-4 bg-white relative">
-        {/* Watermark */}
-        <div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10 pointer-events-none z-0"
-          style={{
-            backgroundImage: 'url(/images/sph-logo-blue.png)',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center center',
-            backgroundSize: '800px 800px'
-          }}
-        />
-        <div className="container mx-auto max-w-6xl relative z-10">
+      <section className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-800 mb-6">What We Do</h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
@@ -61,18 +51,8 @@ export default function Home() {
       </section>
 
       {/* Core Solutions Section */}
-      <section className="py-20 px-4 bg-gray-50 relative">
-        {/* Watermark */}
-        <div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10 pointer-events-none z-0"
-          style={{
-            backgroundImage: 'url(/images/sph-logo-blue.png)',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center center',
-            backgroundSize: '800px 800px'
-          }}
-        />
-        <div className="container mx-auto max-w-6xl relative z-10">
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-gray-800 text-center mb-16">Core Solutions</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -98,18 +78,8 @@ export default function Home() {
       </section>
 
       {/* Why SPH Section */}
-      <section className="py-20 px-4 bg-white relative">
-        {/* Watermark */}
-        <div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10 pointer-events-none z-0"
-          style={{
-            backgroundImage: 'url(/images/sph-logo-blue.png)',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center center',
-            backgroundSize: '800px 800px'
-          }}
-        />
-        <div className="container mx-auto max-w-6xl relative z-10">
+      <section className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-800 mb-6">Why SPH</h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
@@ -182,18 +152,8 @@ export default function Home() {
       </section>
 
       {/* Global Reach Section */}
-      <section className="py-20 px-4 bg-gray-50 relative">
-        {/* Watermark */}
-        <div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10 pointer-events-none z-0"
-          style={{
-            backgroundImage: 'url(/images/sph-logo-blue.png)',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center center',
-            backgroundSize: '800px 800px'
-          }}
-        />
-        <div className="container mx-auto max-w-6xl text-center relative z-10">
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="container mx-auto max-w-6xl text-center">
           <h2 className="text-3xl font-bold text-gray-800 mb-6">Global Reach</h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
             With trust operations in Labuan, teams in Thailand and Singapore, and partnerships in the UK, Australia, and Asia, SPH bridges continents to deliver secure, compliant property ownership and wealth continuity.
@@ -206,6 +166,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
