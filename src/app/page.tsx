@@ -172,7 +172,7 @@ export default function Home() {
             href="/contact"
             className="inline-block bg-blue-600 text-white font-medium py-3 px-8 rounded-md hover:bg-blue-700 transition duration-200"
           >
-            Book a Consultation
+            Learn More
           </Link>
         </div>
       </section>

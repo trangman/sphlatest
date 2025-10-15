@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import Link from 'next/link';
 
 export default function About() {
   return (
@@ -50,6 +51,22 @@ export default function About() {
             </div>
 
           </div>
+        </div>
+      </section>
+      
+      {/* Call to Action */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto max-w-6xl text-center">
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">Ready to Learn More?</h2>
+          <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
+            Discover how SPH can help you secure and manage your real estate investments across Southeast Asia.
+          </p>
+          <Link 
+            href="/contact"
+            className="inline-block bg-blue-600 text-white font-medium py-3 px-8 rounded-md hover:bg-blue-700 transition duration-200"
+          >
+            Learn More
+          </Link>
         </div>
       </section>
     </div>

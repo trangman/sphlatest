@@ -170,10 +170,13 @@ export default function Services() {
           
           {/* Call to Action */}
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">Ready to secure your investments?</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">Ready to Learn More?</h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
+              Discover how our services can help you secure and manage your real estate investments across Southeast Asia.
+            </p>
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8">
               <Link href="/contact">
-                Get Started Today
+                Learn More
               </Link>
             </Button>
           </div>

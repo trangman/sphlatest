@@ -113,7 +113,7 @@ export default function Resources() {
           
           {/* Contact CTA */}
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-blue-900 mb-4">Need more information?</h2>
+            <h2 className="text-2xl font-bold text-blue-900 mb-4">Ready to Learn More?</h2>
             <p className="mb-6">
               Our team is available to answer any questions and provide personalized guidance for your investment needs.
             </p>
@@ -121,7 +121,7 @@ export default function Resources() {
               href="/contact" 
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300"
             >
-              Contact Us
+              Learn More
             </Link>
           </div>
         </div>

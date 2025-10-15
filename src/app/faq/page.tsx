@@ -68,7 +68,7 @@ export default function FAQ() {
         <div className="container mx-auto max-w-4xl">
           <div className="mb-8 md:mb-12">
             <p className="text-base md:text-lg mb-8">
-              Find answers to the most common questions about Siam Property Holdings and our services. If you can't find the information you're looking for, please don't hesitate to <a href="/contact" className="text-blue-600 hover:underline">contact us</a>.
+              Find answers to the most common questions about Siam Property Holdings and our services. If you can't find the information you're looking for, please don't hesitate to <a href="/contact" className="text-blue-600 hover:underline">Learn More</a>.
             </p>
           </div>
           
@@ -79,13 +79,13 @@ export default function FAQ() {
           </div>
           
           <div className="bg-blue-50 p-4 md:p-6 rounded-lg text-center">
-            <h2 className="text-xl md:text-2xl font-bold text-blue-900 mb-3 md:mb-4">Still have questions?</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-blue-900 mb-3 md:mb-4">Ready to Learn More?</h2>
             <p className="text-sm md:text-base mb-4 md:mb-6">Our team is here to help you with any questions you may have about investing in Southeast Asian property.</p>
             <a 
               href="/contact" 
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 md:py-2 md:px-6 text-sm md:text-base rounded-lg transition duration-300"
             >
-              Contact Us
+              Learn More
             </a>
           </div>
         </div>
