@@ -1,4 +1,19 @@
 import Hero from '@/components/Hero';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Our Partners - Strategic Alliances | Siam Property Holdings",
+  description: "Learn about SPH's strategic partnerships with Thailand Investor Network, Clear Blue Security Agents, and other trusted organizations providing secure investment solutions.",
+  keywords: "SPH partners, Thailand Investor Network, Clear Blue Security Agents, strategic partnerships, real estate investment partners",
+  openGraph: {
+    title: "Our Partners - Strategic Alliances",
+    description: "Learn about SPH's strategic partnerships providing secure investment solutions across Southeast Asia.",
+    url: "https://siampropertyholdings.com/partners",
+  },
+  alternates: {
+    canonical: "https://siampropertyholdings.com/partners",
+  },
+};
 
 // Partner Card component
 const PartnerCard = ({ 

@@ -7,11 +7,52 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://siampropertyholdings.com'),
   title: "Siam Property Holdings (SPH) - Your Secure Investment Platform",
   description: "SPH provides legal and secure solutions for foreign investors seeking to access Southeast Asia's Property Markets, in particular Thailand.",
+  keywords: "Thai real estate investment, Southeast Asia property investment, offshore trust structures, foreign property ownership Thailand, Better than Freehold, Labuan trust company",
+  authors: [{ name: "Siam Property Holdings" }],
+  creator: "Siam Property Holdings",
+  publisher: "Siam Property Holdings",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://siampropertyholdings.com',
+    title: 'Siam Property Holdings (SPH) - Your Secure Investment Platform',
+    description: 'SPH provides legal and secure solutions for foreign investors seeking to access Southeast Asia\'s Property Markets, in particular Thailand.',
+    siteName: 'Siam Property Holdings',
+    images: [
+      {
+        url: '/images/sph-logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Siam Property Holdings Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Siam Property Holdings (SPH) - Your Secure Investment Platform',
+    description: 'SPH provides legal and secure solutions for foreign investors seeking to access Southeast Asia\'s Property Markets, in particular Thailand.',
+    images: ['/images/sph-logo.png'],
+  },
   icons: {
     icon: { url: '/favicon.png', type: 'image/png' }
-  }
+  },
+  alternates: {
+    canonical: 'https://siampropertyholdings.com',
+  },
 };
 
 export const viewport: Viewport = {

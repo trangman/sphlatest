@@ -1,0 +1,61 @@
+# Cursor Rules for SPH Website
+
+## Content Guidelines
+
+### Text Formatting
+- **NEVER use em dashes (—) or en dashes (–)** - Always use single hyphens (-) instead
+- **NEVER use special Unicode dashes** - These are AI content indicators
+- Use standard ASCII characters only for dashes and punctuation
+- Maintain consistent formatting across all pages
+
+### Writing Style
+- Use clear, professional language
+- Avoid overly complex sentence structures
+- Keep paragraphs concise and readable
+- Use active voice when possible
+
+## Code Standards
+
+### React/Next.js
+- Use TypeScript for all components
+- Follow Next.js 14+ App Router conventions
+- Use proper component naming (PascalCase)
+- Implement proper error boundaries
+
+### Styling
+- Use Tailwind CSS for all styling
+- Maintain consistent spacing and typography
+- Follow mobile-first responsive design
+- Use semantic HTML elements
+
+### File Organization
+- Keep components in `/src/components/`
+- Page components in `/src/app/[page]/`
+- Use proper imports and exports
+- Maintain clean file structure
+
+## Content Management
+
+### CTAs (Call-to-Actions)
+- Standardize all CTAs to "Learn More" linking to `/contact`
+- Maintain consistent button styling across pages
+- Use clear, action-oriented language
+
+### Images and Assets
+- Use WebP format for images when possible
+- Optimize images for web performance
+- Use descriptive alt text for accessibility
+
+## Quality Assurance
+
+### Before Committing
+- Check for em dashes or en dashes in all text content
+- Verify all CTAs follow the "Learn More" standard
+- Test responsive design on multiple screen sizes
+- Ensure all links work correctly
+
+### Code Review Checklist
+- No special Unicode characters in text content
+- Consistent styling and formatting
+- Proper TypeScript types
+- Clean, readable code structure

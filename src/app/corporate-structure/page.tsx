@@ -1,4 +1,19 @@
 import Hero from '@/components/Hero';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Corporate Structure - Leadership Team | Siam Property Holdings",
+  description: "Learn about SPH's corporate structure, board members, and leadership team. Company limited by guarantee with experienced professionals in international finance and property investment.",
+  keywords: "SPH corporate structure, board members, leadership team, Labuan financial services, company structure",
+  openGraph: {
+    title: "Corporate Structure - Leadership Team",
+    description: "Learn about SPH's corporate structure, board members, and leadership team.",
+    url: "https://siampropertyholdings.com/corporate-structure",
+  },
+  alternates: {
+    canonical: "https://siampropertyholdings.com/corporate-structure",
+  },
+};
 
 // Board Member component
 interface BoardMemberProps {

@@ -1,5 +1,20 @@
 import Hero from '@/components/Hero';
 import React from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "FAQ - Frequently Asked Questions | Siam Property Holdings",
+  description: "Find answers to common questions about SPH services, real estate trusts, Better-than-Freehold™ solutions, and foreign property investment in Southeast Asia.",
+  keywords: "SPH FAQ, real estate trust questions, Better than Freehold FAQ, Thai property investment questions, offshore trust FAQ",
+  openGraph: {
+    title: "FAQ - Frequently Asked Questions",
+    description: "Find answers to common questions about SPH services, real estate trusts, and foreign property investment in Southeast Asia.",
+    url: "https://siampropertyholdings.com/faq",
+  },
+  alternates: {
+    canonical: "https://siampropertyholdings.com/faq",
+  },
+};
 
 // FAQ Item component with toggleable content
 const FaqItem = ({ question, answer }: { question: string; answer: React.ReactNode }) => {
@@ -21,6 +36,45 @@ const FaqItem = ({ question, answer }: { question: string; answer: React.ReactNo
 };
 
 export default function FAQ() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I hold income-generating real estate in a trust?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Trusts are often used to hold rental properties, commercial buildings, or even large development projects, offering advantages in asset protection, income distribution, and succession planning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is real estate held in trust protected from creditors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When structured correctly, real estate in a trust can be shielded from personal or business liabilities. However, timing and jurisdictional rules are critical."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use an offshore trust to hold real estate in Asia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely, provided the structure complies with local regulations and reporting obligations. For example, SPH has an exclusive commercial partnership with Thailand Investor Network (\"TIN\") that utilises the Better Than freehold™ (\"BtF) Thai property acquisition platform to provide security and finance to foreign investors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Better than Freehold™ solution?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Better-than-Freehold™ (BtF) is a legally compliant, financeable, and risk-mitigated platform designed for foreign investment in Thai real estate. It eliminates the legal risks associated with freehold ownership, 30-year lease limitations, and illegal nominee companies. BtF also enables offshore financing, provides capital protection, and ensures secure, enforceable ownership rights."
+        }
+      }
+    ]
+  };
+
   const faqs = [
     {
       question: "Can I hold income-generating real estate in a trust?",
@@ -58,6 +112,10 @@ export default function FAQ() {
 
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Hero 
         title="Frequently Asked Questions" 
         subtitle="Find answers to common questions about SPH and our services"

@@ -3,6 +3,21 @@ import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Our Services - Real Estate Trust Solutions | Siam Property Holdings",
+  description: "Professional real estate trust solutions, fiduciary services, and wealth structuring for foreign investors in Thailand and Southeast Asia. Better-than-Freehold™ platform.",
+  keywords: "real estate trust solutions, fiduciary services, wealth structuring, Thai property investment, offshore trust structures, Better than Freehold",
+  openGraph: {
+    title: "Our Services - Real Estate Trust Solutions",
+    description: "Professional real estate trust solutions, fiduciary services, and wealth structuring for foreign investors in Thailand and Southeast Asia.",
+    url: "https://siampropertyholdings.com/services",
+  },
+  alternates: {
+    canonical: "https://siampropertyholdings.com/services",
+  },
+};
 
 // Service card component
 const ServiceCard = ({ title, subtitle, bullets, icon }: { title: string, subtitle: string, bullets: string[], icon: string }) => {
@@ -32,6 +47,59 @@ const ServiceCard = ({ title, subtitle, bullets, icon }: { title: string, subtit
 };
 
 export default function Services() {
+  const servicesSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "Service",
+        "name": "Real Estate Trust Solutions",
+        "description": "Holding, succession, and protection structures for high-value property portfolios across Thailand, Singapore, and beyond.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Siam Property Holdings"
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Thailand"
+          },
+          {
+            "@type": "Country",
+            "name": "Singapore"
+          }
+        ]
+      },
+      {
+        "@type": "Service", 
+        "name": "Asia-Focused Trust & Fiduciary Services",
+        "description": "Onshore and offshore structures tailored for Global families.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Siam Property Holdings"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Wealth Structuring & Succession Planning", 
+        "description": "Long-term planning for generational wealth transfer.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Siam Property Holdings"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Corporate Structures for Real Estate Investment",
+        "description": "Smart structures for efficient property ownership and transfer.",
+        "provider": {
+          "@type": "Organization", 
+          "name": "Siam Property Holdings"
+        }
+      }
+    ]
+  };
+
   const services = [
     {
       title: "Real Estate Trust Solutions",
@@ -82,6 +150,10 @@ export default function Services() {
 
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
       <Hero 
         title="Our Services" 
         subtitle="Professional solutions for secure property investment in Southeast Asia"

@@ -1,5 +1,20 @@
 import Hero from '@/components/Hero';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Resources & Insights - Real Estate Investment Guides | Siam Property Holdings",
+  description: "Comprehensive resources and insights for foreign property investment in Southeast Asia. Guides on Thai real estate, trust structures, and Better-than-Freehold™ solutions.",
+  keywords: "real estate investment guides, Thai property resources, Southeast Asia property insights, trust structure guides, Better than Freehold resources",
+  openGraph: {
+    title: "Resources & Insights - Real Estate Investment Guides",
+    description: "Comprehensive resources and insights for foreign property investment in Southeast Asia.",
+    url: "https://siampropertyholdings.com/resources",
+  },
+  alternates: {
+    canonical: "https://siampropertyholdings.com/resources",
+  },
+};
 
 // Resource Card component
 const ResourceCard = ({ title, description, link, icon }: { title: string; description: string; link: string; icon: string }) => {

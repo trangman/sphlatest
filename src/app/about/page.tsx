@@ -1,5 +1,20 @@
 import Hero from '@/components/Hero';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "About Us - Siam Property Holdings | Trusted Real Estate Investment Solutions",
+  description: "Learn about Siam Property Holdings' mission to provide secure, compliant real estate investment solutions across Southeast Asia. Licensed in Labuan, serving investors globally.",
+  keywords: "about SPH, Siam Property Holdings team, real estate investment company, Southeast Asia property experts, Labuan trust company",
+  openGraph: {
+    title: "About Us - Siam Property Holdings",
+    description: "Learn about Siam Property Holdings' mission to provide secure, compliant real estate investment solutions across Southeast Asia.",
+    url: "https://siampropertyholdings.com/about",
+  },
+  alternates: {
+    canonical: "https://siampropertyholdings.com/about",
+  },
+};
 
 export default function About() {
   return (

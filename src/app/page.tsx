@@ -5,8 +5,60 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 export default function Home() {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Siam Property Holdings",
+    "url": "https://siampropertyholdings.com",
+    "logo": "https://siampropertyholdings.com/images/sph-logo.png",
+    "description": "SPH provides legal and secure solutions for foreign investors seeking to access Southeast Asia's Property Markets, in particular Thailand.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Unit 3A-2, Level 3A, Labuan Times Square, Jalan Merdeka",
+      "addressLocality": "W.P Labuan",
+      "postalCode": "87000",
+      "addressCountry": "MY"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+60-15-4600-0087",
+      "contactType": "customer service",
+      "email": "info@siampropertyholdings.com",
+      "availableLanguage": "English"
+    },
+    "sameAs": [
+      "https://www.thailandinvestornetwork.com",
+      "https://www.clearblue.th",
+      "https://www.venturemanagement.my"
+    ],
+    "foundingDate": "2020",
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Thailand"
+      },
+      {
+        "@type": "Country", 
+        "name": "Singapore"
+      },
+      {
+        "@type": "Country",
+        "name": "Malaysia"
+      }
+    ],
+    "serviceType": "Financial Services",
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Labuan Financial Services Authority License"
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       {/* Hero Section */}
       <section 
         className="relative py-48 px-4 bg-cover bg-center"
