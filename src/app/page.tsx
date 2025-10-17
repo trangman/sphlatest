@@ -42,12 +42,6 @@ export default function Home() {
             <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
               Through partnerships with Thailand Investor Network (TIN) and Clear Blue Security Agents (CBSA), every client enjoys enforceable property rights, independent oversight, and seamless cross-border finance ability.
             </p>
-            <Link 
-              href="/about"
-              className="inline-block bg-blue-600 text-white font-medium py-3 px-8 rounded-md hover:bg-blue-700 transition duration-200"
-            >
-              Learn How It Works
-            </Link>
           </div>
         </div>
       </section>
