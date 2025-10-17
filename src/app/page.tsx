@@ -20,7 +20,7 @@ export default function Home() {
         <div className="relative container mx-auto max-w-4xl text-center z-10">
           <h1 className="text-white text-5xl font-bold mb-8">The Trusted Bridge Between Real Estate and Wealth Management</h1>
           <p className="text-white text-xl leading-relaxed mb-8">
-            Licensed in Labuan and active across Asia, Siam Property Holding (SPH) provides regulated trust, fiduciary, and real estate holding structures — creating secure, compliant, and financeable ownership solutions for cross-border investors.
+            Licensed in Labuan and active across Asia, Siam Property Holding (SPH) provides regulated trust, fiduciary, and real estate holding structures - creating secure, compliant, and financeable ownership solutions for cross-border investors.
           </p>
           <Link 
             href="/services"
@@ -37,7 +37,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-800 mb-6">What We Do</h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
-              SPH enables investors, developers, and family offices to own, manage, and transfer real estate wealth securely — using trust-based structures that comply with Thai law and AMLA 2025, whilst delivering the same or better rights than freehold ownership.
+              SPH enables investors, developers, and family offices to own, manage, and transfer real estate wealth securely - using trust-based structures that comply with Thai law and AMLA 2025, whilst delivering the same or better rights than freehold ownership.
             </p>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
               Through partnerships with Thailand Investor Network (TIN) and Clear Blue Security Agents (CBSA), every client enjoys enforceable property rights, independent oversight, and seamless cross-border finance ability.
@@ -79,7 +79,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-800 mb-6">Why SPH</h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
-              SPH sits at the intersection of real estate, trust law, and cross-border wealth management — offering a unique blend of compliance, control, and continuity.
+              SPH sits at the intersection of real estate, trust law, and cross-border wealth management - offering a unique blend of compliance, control, and continuity.
             </p>
           </div>
           
@@ -92,7 +92,7 @@ export default function Home() {
               <CardContent className="space-y-4 flex-grow">
                 <div className="flex items-start space-x-3">
                   <span className="text-blue-600 text-lg font-bold mt-0.5 flex-shrink-0">✓</span>
-                  <span className="text-gray-600">Regulated trust company (Labuan FSA)</span>
+                  <span className="text-gray-600">Regulated Trust Company (under application Labuan FSA)</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <span className="text-blue-600 text-lg font-bold mt-0.5 flex-shrink-0">✓</span>

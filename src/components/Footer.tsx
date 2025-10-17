@@ -30,7 +30,7 @@ const Footer = () => {
             <p className="mb-2 text-sm text-white">Email: info@siampropertyholdings.com</p>
             <p className="mb-2 text-sm text-white">Phone: +60 (0) 15 4600 0087</p>
             <p className="mb-2 text-sm text-white">Labuan Office: Unit 3A-2, Level 3A, Labuan Times Square, Jalan Merdeka, 87000 W.P Labuan, Malaysia</p>
-            <p className="mb-2 text-sm text-white">Business Hours: Monday–Friday, 9 AM–5 PM (ICT)</p>
+            <p className="mb-2 text-sm text-white">Business Hours: Monday-Friday, 9 AM-5 PM (ICT)</p>
             <p className="text-xs italic mt-1 text-gray-300">*Please note Labuan is 1 hour ahead of Thailand</p>
           </div>
         </div>

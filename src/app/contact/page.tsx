@@ -225,7 +225,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-base md:text-lg font-semibold text-blue-900">Business Hours</h3>
-                    <p className="mt-1 text-sm md:text-base">Monday–Friday, 9 AM–5 PM (ICT)</p>
+                    <p className="mt-1 text-sm md:text-base">Monday-Friday, 9 AM-5 PM (ICT)</p>
                     <p className="text-xs italic mt-1">*Please note Labuan is 1 hour ahead of Thailand</p>
                   </div>
                 </div>
