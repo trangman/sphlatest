@@ -21,7 +21,7 @@ const Footer = () => {
                 />
               </Link>
               
-              <p className="mb-4 text-sm text-white">Authorized and regulated by the Labuan Financial Services Authority</p>
+              
             </div>
           </div>
           

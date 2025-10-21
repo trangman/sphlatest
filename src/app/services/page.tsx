@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import BtfLink from '@/components/BtfLink';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -164,7 +165,7 @@ export default function Services() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
-              Clients benefit from a 'Better than Freehold™ ("BtF") wrapper' in terms of our project management for international real estate developers. We ensure operating structures and protections are as close as possible to executing a deal in their home jurisdiction no matter where clients are in the world.
+              Clients benefit from a 'Better than Freehold™ <BtfLink /> wrapper' in terms of our project management for international real estate developers. We ensure operating structures and protections are as close as possible to executing a deal in their home jurisdiction no matter where clients are in the world.
             </p>
           </div>
           

@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import TinLink from '@/components/TinLink';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ const PartnerCard = ({
   description, 
   website 
 }: { 
-  name: string; 
+  name: React.ReactNode; 
   role: string; 
   description: string; 
   website?: string;
@@ -73,7 +74,7 @@ export default function Partners() {
             <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center">Our Key Partners</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <PartnerCard 
-                name="Thailand Investor Network (TIN)" 
+                name={<span>Thailand Investor Network <TinLink /></span>} 
                 role="Local Partner in Thailand" 
                 description="Our exclusive Thai partner who provides us and our investors with an 'Asset Backed Performance Guarantee' securing our investments in Thai Property."
                 website="https://www.thailandinvestornetwork.com"

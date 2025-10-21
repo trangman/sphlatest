@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import CbsaLink from '@/components/CbsaLink';
+import TinLink from '@/components/TinLink';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -72,7 +74,7 @@ export default function Home() {
         <div className="relative container mx-auto max-w-4xl text-center z-10">
           <h1 className="text-white text-5xl font-bold mb-8">The Trusted Bridge Between Real Estate and Wealth Management</h1>
           <p className="text-white text-xl leading-relaxed mb-8">
-            Licensed in Labuan and active across Asia, Siam Property Holding (SPH) provides regulated trust, fiduciary, and real estate holding structures - creating secure, compliant, and financeable ownership solutions for cross-border investors.
+            Registered in Labuan and active across Asia, Siam Property Holding (SPH) provides regulated trust, fiduciary, and real estate holding structures - creating secure, compliant, and financeable ownership solutions for cross-border investors.
           </p>
           <Link 
             href="/services"
@@ -92,7 +94,7 @@ export default function Home() {
               SPH enables investors, developers, and family offices to own, manage, and transfer real estate wealth securely - using trust-based structures that comply with Thai law and AMLA 2025, whilst delivering the same or better rights than freehold ownership.
             </p>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
-              Through partnerships with Thailand Investor Network (TIN) and Clear Blue Security Agents (CBSA), every client enjoys enforceable property rights, independent oversight, and seamless cross-border finance ability.
+              Through partnerships with Thailand Investor Network <TinLink /> and Clear Blue Security Agents <CbsaLink />, every client enjoys enforceable property rights, independent oversight, and seamless cross-border finance ability.
             </p>
           </div>
         </div>
@@ -156,7 +158,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-start space-x-3">
                   <span className="text-blue-600 text-lg font-bold mt-0.5 flex-shrink-0">✓</span>
-                  <span className="text-gray-600">Independent CBSA enforcement</span>
+                  <span className="text-gray-600">Independent <CbsaLink /> enforcement</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <span className="text-blue-600 text-lg font-bold mt-0.5 flex-shrink-0">✓</span>
@@ -194,7 +196,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-start space-x-3">
                   <span className="text-blue-600 text-lg font-bold mt-0.5 flex-shrink-0">✓</span>
-                  <span className="text-gray-600">Those seeking transparent CBSA compliance</span>
+                  <span className="text-gray-600">Those seeking transparent <CbsaLink /> compliance</span>
                 </div>
               </CardContent>
               <div className="p-6 pt-0">
