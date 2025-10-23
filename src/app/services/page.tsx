@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: "Our Services - Real Estate Trust Solutions | Siam Property Holdings",
@@ -187,10 +188,33 @@ export default function Services() {
               <CardTitle className="text-3xl font-bold text-gray-800 mb-6">Jurisdictions We Specialize In</CardTitle>
             </CardHeader>
             <CardContent>
+              {/* Image Section */}
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div className="w-full h-48 md:h-56 rounded-lg border border-gray-300 bg-white p-4 shadow-sm flex items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/thailand.webp"
+                    alt="Thailand focus markets"
+                    className="max-w-full max-h-full object-contain"
+                    style={{ backgroundColor: 'white' }}
+                  />
+                </div>
+                <div className="w-full h-48 md:h-56 rounded-lg border border-gray-300 bg-white p-4 shadow-sm flex items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/world-map.webp"
+                    alt="Typical trust beneficiary jurisdictions"
+                    className="max-w-full max-h-full object-contain"
+                    style={{ backgroundColor: 'white' }}
+                  />
+                </div>
+              </div>
+
+              {/* Text Section */}
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-xl font-bold text-gray-800 mb-4">Key Asian Markets & Holding Jurisdictions:</h3>
-                  <div className="mb-4">
+                  <div>
                     <h4 className="font-semibold text-gray-700 mb-2">Thailand Real Estate Focus Areas:</h4>
                     <div className="flex flex-wrap gap-2">
                       {['Bangkok', 'Samui', 'Phuket', 'Krabi', 'Chon Buri', 'Chiang Mai'].map((city) => (
