@@ -189,24 +189,26 @@ export default function Services() {
             </CardHeader>
             <CardContent>
               {/* Image Section */}
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <div className="w-full h-48 md:h-56 rounded-lg border border-gray-300 bg-white p-4 shadow-sm flex items-center justify-center">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/images/thailand.webp"
-                    alt="Thailand focus markets"
-                    className="max-w-full max-h-full object-contain"
-                    style={{ backgroundColor: 'white' }}
-                  />
-                </div>
-                <div className="w-full h-48 md:h-56 rounded-lg border border-gray-300 bg-white p-4 shadow-sm flex items-center justify-center">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/images/world-map.webp"
-                    alt="Typical trust beneficiary jurisdictions"
-                    className="max-w-full max-h-full object-contain"
-                    style={{ backgroundColor: 'white' }}
-                  />
+              <div className="w-full mb-8">
+                <div className="w-full space-y-6">
+                  <div className="w-full h-80 md:h-96 rounded-lg border border-gray-300 bg-white p-4 shadow-sm flex items-center justify-center">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/images/thailand.webp"
+                      alt="Thailand focus markets"
+                      className="max-w-full max-h-full object-contain"
+                      style={{ backgroundColor: 'white' }}
+                    />
+                  </div>
+                  <div className="w-full h-80 md:h-96 rounded-lg border border-gray-300 bg-white p-4 shadow-sm flex items-center justify-center">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/images/world-map.webp"
+                      alt="Typical trust beneficiary jurisdictions"
+                      className="max-w-full max-h-full object-contain"
+                      style={{ backgroundColor: 'white' }}
+                    />
+                  </div>
                 </div>
               </div>
 
