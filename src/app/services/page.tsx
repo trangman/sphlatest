@@ -188,10 +188,11 @@ export default function Services() {
               <CardTitle className="text-3xl font-bold text-gray-800 mb-6">Jurisdictions We Specialize In</CardTitle>
             </CardHeader>
             <CardContent>
-              {/* Image Section */}
-              <div className="w-full mb-8">
-                <div className="w-full space-y-6">
-                  <div className="w-full h-80 md:h-96 rounded-lg border border-gray-300 bg-white p-4 shadow-sm flex items-center justify-center">
+              {/* Image and Text Section */}
+              <div className="w-full space-y-8">
+                {/* Thailand Image with Text */}
+                <div className="w-full">
+                  <div className="w-full h-80 md:h-96 rounded-lg border border-gray-300 bg-white p-4 shadow-sm flex items-center justify-center mb-6">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src="/images/thailand.webp"
@@ -200,7 +201,24 @@ export default function Services() {
                       style={{ backgroundColor: 'white' }}
                     />
                   </div>
-                  <div className="w-full h-80 md:h-96 rounded-lg border border-gray-300 bg-white p-4 shadow-sm flex items-center justify-center">
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold text-gray-800 mb-4">Key Asian Markets & Holding Jurisdictions:</h3>
+                    <div>
+                      <h4 className="font-semibold text-gray-700 mb-2">Thailand Real Estate Focus Areas:</h4>
+                      <div className="flex flex-wrap gap-2 justify-center">
+                        {['Bangkok', 'Samui', 'Phuket', 'Krabi', 'Chon Buri', 'Chiang Mai'].map((city) => (
+                          <Badge key={city} variant="secondary" className="text-sm">
+                            {city}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* World Map Image with Text */}
+                <div className="w-full">
+                  <div className="w-full h-80 md:h-96 rounded-lg border border-gray-300 bg-white p-4 shadow-sm flex items-center justify-center mb-6">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src="/images/world-map.webp"
@@ -209,33 +227,15 @@ export default function Services() {
                       style={{ backgroundColor: 'white' }}
                     />
                   </div>
-                </div>
-              </div>
-
-              {/* Text Section */}
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">Key Asian Markets & Holding Jurisdictions:</h3>
-                  <div>
-                    <h4 className="font-semibold text-gray-700 mb-2">Thailand Real Estate Focus Areas:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {['Bangkok', 'Samui', 'Phuket', 'Krabi', 'Chon Buri', 'Chiang Mai'].map((city) => (
-                        <Badge key={city} variant="secondary" className="text-sm">
-                          {city}
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold text-gray-800 mb-4">Typical Trust Beneficiary Jurisdictions:</h3>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {['Singapore', 'Hong Kong', 'Korea', 'Japan', 'UAE', 'UK', 'Australia', 'New Zealand', 'Europe', 'USA'].map((country) => (
+                        <Badge key={country} variant="outline" className="text-sm">
+                          {country}
                         </Badge>
                       ))}
                     </div>
-                  </div>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">Typical Trust Beneficiary Jurisdictions:</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {['Singapore', 'Hong Kong', 'Korea', 'Japan', 'UAE', 'UK', 'Australia', 'New Zealand', 'Europe', 'USA'].map((country) => (
-                      <Badge key={country} variant="outline" className="text-sm">
-                        {country}
-                      </Badge>
-                    ))}
                   </div>
                 </div>
               </div>
