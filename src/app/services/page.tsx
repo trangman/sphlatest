@@ -192,6 +192,10 @@ export default function Services() {
               <div className="w-full space-y-8">
                 {/* Thailand Image with Text */}
                 <div className="w-full">
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">Key Asian Markets & Holding Jurisdictions:</h3>
+                    <h4 className="font-semibold text-gray-700">Thailand Real Estate Focus Areas:</h4>
+                  </div>
                   <div className="w-full h-80 md:h-96 rounded-lg border border-gray-300 bg-white p-4 shadow-sm flex items-center justify-center mb-6">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
@@ -201,23 +205,13 @@ export default function Services() {
                       style={{ backgroundColor: 'white' }}
                     />
                   </div>
-                  <div className="text-center">
-                    <h3 className="text-xl font-bold text-gray-800 mb-4">Key Asian Markets & Holding Jurisdictions:</h3>
-                    <div>
-                      <h4 className="font-semibold text-gray-700 mb-2">Thailand Real Estate Focus Areas:</h4>
-                      <div className="flex flex-wrap gap-2 justify-center">
-                        {['Bangkok', 'Samui', 'Phuket', 'Krabi', 'Chon Buri', 'Chiang Mai'].map((city) => (
-                          <Badge key={city} variant="secondary" className="text-sm">
-                            {city}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
                 {/* World Map Image with Text */}
                 <div className="w-full">
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">Typical Trust Beneficiary Jurisdictions:</h3>
+                  </div>
                   <div className="w-full h-80 md:h-96 rounded-lg border border-gray-300 bg-white p-4 shadow-sm flex items-center justify-center mb-6">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
@@ -226,16 +220,6 @@ export default function Services() {
                       className="max-w-full max-h-full object-contain"
                       style={{ backgroundColor: 'white' }}
                     />
-                  </div>
-                  <div className="text-center">
-                    <h3 className="text-xl font-bold text-gray-800 mb-4">Typical Trust Beneficiary Jurisdictions:</h3>
-                    <div className="flex flex-wrap gap-2 justify-center">
-                      {['Singapore', 'Hong Kong', 'Korea', 'Japan', 'UAE', 'UK', 'Australia', 'New Zealand', 'Europe', 'USA'].map((country) => (
-                        <Badge key={country} variant="outline" className="text-sm">
-                          {country}
-                        </Badge>
-                      ))}
-                    </div>
                   </div>
                 </div>
               </div>
