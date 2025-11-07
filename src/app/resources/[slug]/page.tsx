@@ -29,10 +29,32 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const openGraph: Metadata['openGraph'] = {
+    title: post.frontmatter.title,
+    description: post.frontmatter.description,
+    url: `https://siampropertyholdings.com/resources/${params.slug}`,
+    type: 'article',
+    siteName: 'Siam Property Holdings',
+    images: post.frontmatter.heroImage ? [
+      {
+        url: post.frontmatter.heroImage,
+        width: 1200,
+        height: 630,
+        alt: post.frontmatter.title,
+      }
+    ] : [],
+  };
+
+  if (post.frontmatter.pubDate) {
+    openGraph.publishedTime = post.frontmatter.pubDate;
+  }
+
   return {
     title: `${post.frontmatter.title} | Siam Property Holdings`,
     description: post.frontmatter.description,
-    openGraph: {
+    openGraph,
+    twitter: {
+      card: 'summary_large_image',
       title: post.frontmatter.title,
       description: post.frontmatter.description,
       images: post.frontmatter.heroImage ? [post.frontmatter.heroImage] : [],
