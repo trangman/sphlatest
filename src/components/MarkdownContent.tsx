@@ -3,6 +3,8 @@
 import React, { useMemo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Link from 'next/link';
 
 interface MarkdownContentProps {
@@ -49,7 +51,10 @@ const FAQAccordion = ({ faqs }: { faqs: FAQItem[] }) => (
             </span>
           </summary>
           <div className="p-4 border-t border-gray-200 bg-gray-50 text-sm md:text-base prose prose-sm max-w-none">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            <ReactMarkdown 
+              remarkPlugins={[remarkGfm]} 
+              rehypePlugins={[rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]]}
+            >
               {faq.answer}
             </ReactMarkdown>
           </div>
@@ -130,7 +135,12 @@ function parseAndRender(content: string): React.ReactNode[] {
       const markdownContent = content.substring(lastIndex, pos.start);
       if (markdownContent.trim()) {
         parts.push(
-          <ReactMarkdown key={key++} remarkPlugins={[remarkGfm]} components={customComponents}>
+          <ReactMarkdown 
+            key={key++} 
+            remarkPlugins={[remarkGfm]} 
+            rehypePlugins={[rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]]}
+            components={customComponents}
+          >
             {markdownContent}
           </ReactMarkdown>
         );
@@ -143,7 +153,11 @@ function parseAndRender(content: string): React.ReactNode[] {
     } else if (pos.type === 'keytakeaways') {
       parts.push(
         <KeyTakeaways key={key++}>
-          <ReactMarkdown remarkPlugins={[remarkGfm]} components={customComponents}>
+          <ReactMarkdown 
+            remarkPlugins={[remarkGfm]} 
+            rehypePlugins={[rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]]}
+            components={customComponents}
+          >
             {(pos as any).content}
           </ReactMarkdown>
         </KeyTakeaways>
@@ -151,7 +165,11 @@ function parseAndRender(content: string): React.ReactNode[] {
     } else if (pos.type === 'quickanswer') {
       parts.push(
         <QuickAnswer key={key++}>
-          <ReactMarkdown remarkPlugins={[remarkGfm]} components={customComponents}>
+          <ReactMarkdown 
+            remarkPlugins={[remarkGfm]} 
+            rehypePlugins={[rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]]}
+            components={customComponents}
+          >
             {(pos as any).content}
           </ReactMarkdown>
         </QuickAnswer>
@@ -179,6 +197,28 @@ function parseAndRender(content: string): React.ReactNode[] {
 // Custom components for ReactMarkdown
 const customComponents = {
   a: ({ href, children, ...props }: any) => {
+    // Handle anchor links (TOC links)
+    if (href && href.startsWith('#')) {
+      return (
+        <a 
+          href={href} 
+          onClick={(e) => {
+            e.preventDefault();
+            const id = href.substring(1);
+            const element = document.getElementById(id);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              // Update URL without scrolling
+              window.history.pushState(null, '', href);
+            }
+          }}
+          className="text-blue-600 hover:text-blue-800 hover:underline" 
+          {...props}
+        >
+          {children}
+        </a>
+      );
+    }
     // Handle /resources/ links - these should point to betterthanfreehold.com
     if (href && href.startsWith('/resources/')) {
       // Extract the slug (remove /resources/ prefix)
@@ -188,6 +228,14 @@ const customComponents = {
         <a href={externalUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline" {...props}>
           {children}
         </a>
+      );
+    }
+    // Handle contact-link placeholder - convert to /contact
+    if (href && (href === 'http://contact-link' || href === 'https://contact-link')) {
+      return (
+        <Link href="/contact" className="text-blue-600 hover:text-blue-800 hover:underline" {...props}>
+          {children}
+        </Link>
       );
     }
     // External links
