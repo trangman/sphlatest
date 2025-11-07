@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { getSPHPosts } from '@/lib/posts';
 
 export const metadata: Metadata = {
   title: "Resources & Insights - Real Estate Investment Guides | Siam Property Holdings",
@@ -12,66 +13,51 @@ export const metadata: Metadata = {
     url: "https://siampropertyholdings.com/resources",
   },
   alternates: {
-    canonical: "https://siampropertyholdings.com/resources",
+    canonical: "http://betterthenfreehold.com/resources",
   },
 };
 
 // Resource Card component
-const ResourceCard = ({ title, description, link, icon }: { title: string; description: string; link: string; icon: string }) => {
+const ResourceCard = ({ title, description, link, heroImage }: { title: string; description: string; link: string; heroImage?: string }) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-      <div className="flex items-center mb-4">
-        <span className="text-3xl mr-3">{icon}</span>
-        <h3 className="text-xl font-bold text-blue-900">{title}</h3>
+    <Link href={link} className="block">
+      <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden h-full cursor-pointer">
+        {heroImage && (
+          <div className="w-full h-48 overflow-hidden">
+            <img 
+              src={heroImage} 
+              alt={title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
+        <div className="p-6">
+          <h3 className="text-xl font-bold text-blue-900 mb-4">{title}</h3>
+          <p className="text-gray-700 mb-4">{description}</p>
+          <div className="inline-flex items-center text-blue-600 hover:text-blue-800">
+            Learn More
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </div>
       </div>
-      <p className="text-gray-700 mb-4">{description}</p>
-      <Link 
-        href={link} 
-        className="inline-flex items-center text-blue-600 hover:text-blue-800"
-      >
-        Learn More
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </Link>
-    </div>
+    </Link>
   );
 };
 
 export default function Resources() {
-  // Resource items from DOCX content
-  const resources = [
-    {
-      title: "How to Hold Thai Real Estate as a Foreigner Legally",
-      description: "Learn about the legal frameworks and structures available for foreign investors in Thai real estate markets.",
-      link: "#",
-      icon: "🏠"
-    },
-    {
-      title: "Singapore Real Estate: Structuring Through Trusts",
-      description: "Explore how trust structures can be used effectively for Singapore real estate investments.",
-      link: "#",
-      icon: "🏢"
-    },
-    {
-      title: "Asset Protection Strategies for Asian Developers",
-      description: "Comprehensive guide to protecting assets and managing risks for property developers in Asian markets.",
-      link: "#",
-      icon: "🛡️"
-    },
-    {
-      title: "CRS & Offshore Property Holdings: What Families Need to Know",
-      description: "Understanding Common Reporting Standard implications for families with offshore property holdings.",
-      link: "#",
-      icon: "📋"
-    },
-    {
-      title: "Japan Inheritance Tax: Planning for Property Owners",
-      description: "Strategic planning approaches for Japanese inheritance tax considerations in property ownership.",
-      link: "#",
-      icon: "💰"
-    }
-  ];
+  // Get posts with showOnSPH: true from content folder
+  const sphPosts = getSPHPosts();
+  
+  // Convert posts to resource format
+  const resources = sphPosts.map((post) => ({
+    slug: post.slug,
+    title: post.frontmatter.title,
+    description: post.frontmatter.description,
+    link: `/resources/${post.slug}`,
+    heroImage: post.frontmatter.heroImage
+  }));
 
   return (
     <div>
@@ -90,17 +76,25 @@ export default function Resources() {
           </div>
           
           {/* Resource Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {resources.map((resource, index) => (
-              <ResourceCard 
-                key={index}
-                title={resource.title}
-                description={resource.description}
-                link={resource.link}
-                icon={resource.icon}
-              />
-            ))}
-          </div>
+          {resources.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {resources.map((resource) => (
+                <ResourceCard 
+                  key={resource.slug}
+                  title={resource.title}
+                  description={resource.description}
+                  link={resource.link}
+                  heroImage={resource.heroImage}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12 mb-16">
+              <p className="text-lg text-gray-600">
+                Resources are coming soon. Check back later for updates.
+              </p>
+            </div>
+          )}
           
           {/* Blog Section */}
           <div className="mb-16">
